@@ -15,7 +15,6 @@ def get(code):
     findUrl = conn.execute('SELECT * FROM shorten_url WHERE short_url = ?', (code,)).fetchall()
     if findUrl:
         getUrl = list(map(getUrls, findUrl))
-        print(getUrl)
         conn.close()
         return getUrl[0]['url']
     else:
@@ -37,7 +36,6 @@ def create(data):
         getShort = random_string()
         addUrl = conn.execute('INSERT INTO shorten_url (url, short_url) VALUES (?, ?) RETURNING *', (data['urlsearch'], getShort))
         shortUrl = list(map(getUrls, addUrl))
-        print(shortUrl)
         conn.commit()
         conn.close()
         return shortUrl[0]['short_url']
