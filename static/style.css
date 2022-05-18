@@ -4,6 +4,36 @@ body {
     text-align: center;
     background-color: rgb(208, 162, 251);
 }
+h1 {
+    margin-top: 5%;
+}
+.searchForm {
+    margin: auto;
+    margin-top: 10%;
+    padding: 20px;
+    font-size: 25px;
+}
+
+.searchForm input {
+    width: 25%;
+    height: 30px;
+    border-radius: 10px;
+    border: solid 1px;
+    margin: auto;
+}
+
+.link {
+    margin: auto;
+    margin-top: 5%;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding: 10px;
+    font-size: 20px;
+    width: auto;
+    background-color: white;
+    border-radius: 10px;
+}
+
 a:link {
     color: green;
 }

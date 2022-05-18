@@ -12,8 +12,11 @@ def home():
         return render_template('home.html', link='', urlsearch='')
     if request.method == 'POST':
         data = request.form
-        link = urls.create(data)
-    return render_template('home.html', link=link, urlsearch=data['urlsearch'])
+        if data['urlsearch']:
+            link = urls.create(data)
+            return render_template('home.html', link=link, urlsearch=data['urlsearch'])
+        return redirect('/')
+    
 
 @app.route('/<code>')
 def get_url(code):
