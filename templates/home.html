@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
     <h1>Welcome to the app</h1>
-    <form action="" method="post">
+    <form action="/" method="POST">
         <label for="urlsearch"></label>
         <input type="text" name="urlsearch" id="urlsearch" placeholder="Enter URL here">
         <input type="submit" value="Search">
     </form>
+    {% if link %}
+    <h4>This is your shortened URL for {{urlsearch}} : <a href="/{{link}}">/{{link}}</a></h4>
+    {% endif %}
 {% endblock %}
